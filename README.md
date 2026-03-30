@@ -1,16 +1,44 @@
-# React + Vite
+# InvexTrack Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema de Gestión de Inventarios - **Módulo Frontend**
 
-Currently, two official plugins are available:
+[![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=white)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-5+-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
+[![React Router](https://img.shields.io/badge/React_Router-6+-CA4245?logo=react-router&logoColor=white)](https://reactrouter.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+##  Descripción
 
-## React Compiler
+Frontend del proyecto **InvexTrack**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este módulo consume la API REST desarrollada en Spring Boot y proporciona una interfaz moderna, responsive y fácil de usar para la gestión de:
+- Productos
+- Categorías
+- Proveedores
+- Usuarios
+- Movimientos de inventario
 
-## Expanding the ESLint configuration
+##  Tecnologías y Herramientas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Tecnología          | Versión | Justificación |
+|---------------------|---------|---------------|
+| React JS            | 18+     | Biblioteca principal para componentes reutilizables |
+| Vite                | 5+      | Herramienta de construcción rápida y moderna |
+| React Router DOM    | 6+      | Manejo de rutas y navegación SPA |
+| Axios               | 1.6+    | Cliente HTTP para consumo de la API REST |
+| CSS Modules         | Nativo  | Estilos encapsulados por componente |
+
+## Estructura del Proyecto
+
+```bash
+invextrack-frontend/
+├── src/
+│   ├── components/     # Componentes globales y reutilizables
+│   ├── pages/          # Páginas por módulo (Productos, Categorías, etc.)
+│   ├── services/       # Servicios de conexión con la API (Axios)
+│   ├── hooks/          # Hooks personalizados
+│   ├── context/        # Contexto global de la aplicación
+│   ├── App.jsx         # Componente raíz con rutas
+│   └── main.jsx        # Punto de entrada
+├── public/
+└── package.json
+```
