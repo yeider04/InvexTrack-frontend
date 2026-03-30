@@ -1,11 +1,31 @@
-// Layout.jsx - Componente Global (según evidencia GA7-220501096-AA4-EV02)
-const Layout = () => {
+/**
+ * Layout.jsx - Componente de estructura principal de InvexTrack.
+ * Envuelve todas las páginas con Navbar y Sidebar.
+ */
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
+
+function Layout() {
   return (
-    <nav>
-      <h1>InvexTrack - Sistema de Gestión de Inventarios</h1>
-      {/* Aquí irá la navegación */}
-    </nav>
-  )
+    <div>
+      <Navbar />
+      <Sidebar />
+      <main style={styles.main}>
+        <Outlet />
+      </main>
+    </div>
+  );
 }
 
-export default Layout
+const styles = {
+  main: {
+    marginLeft: '240px',
+    marginTop: '60px',
+    padding: '28px',
+    minHeight: 'calc(100vh - 60px)',
+  },
+};
+
+export default Layout;
