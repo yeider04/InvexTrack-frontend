@@ -1,7 +1,19 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
+/**
+ * Configuración de Vite para InvexTrack Frontend.
+ * Proxy configurado para redirigir llamadas a la API de Spring Boot.
+ */
 export default defineConfig({
   plugins: [react()],
-})
+  server: {
+    port: 5173,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+      }
+    }
+  }
+});
